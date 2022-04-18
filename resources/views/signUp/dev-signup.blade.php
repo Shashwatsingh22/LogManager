@@ -1,6 +1,6 @@
 @extends('layouts.admin.dashboard.main')
 
-@section('title',"🧔 Admin Dashboard")
+@section('title',"Sign Up")
 
 @section('name',$LoggedAdminData['name'])
 
@@ -12,8 +12,65 @@
 
 @section('content') 
 
+
+
+<div class="formAuth">
+   <h1>Sign Up</h1>
+   <form action="{{ route('admin.dev.save') }}" method="post">
+      @csrf
+      <div class="chooseAcc">
+         <p class="targetP">Please choose your account</p>
+
+         <div class="choices">
+           
+            <div class="item">
+               <input class="form-check-input" type="radio" name="mode" id="exampleRadios1" value="admin" checked>
+               &nbsp;
+               <label class="form-check-label" for="exampleRadios1">
+                  Project Manager
+               </label>
+            </div>
+
+            <div class="item">
+               <input class="form-check-input" type="radio" name="mode" id="exampleRadios2" value="gen-user">
+               &nbsp;
+               <label class="form-check-label" for="exampleRadios2">
+                   Devloper
+               </label>
+            </div>
+
+         </div>
+
+
+         <div class="entryInputs">
+            <input type="text"  name="username" placeholder="Enter Username" value="{{ old('username') }}">
+            <span class="text-danger">@error('username'){{ $message }} @enderror</span>
+         
+
+           <input type="password"  name="password" placeholder="Enter password">
+           <span class="text-danger">@error('password'){{ $message }} @enderror</span>
+
+
+            <button type="submit" >Sign In</button>
+
+         </div>
+
+
+         <div class="haveAcc">
+            <p>Don't have an account ?</p>&nbsp;&nbsp;
+            <a href="{{ route('admin-signup') }}">Sign Up</a>
+         </div>
+
+
+      </div>
+
+      
+
+   </form>
+</div>
+
  <!-- Adding New Devloper HTML -->
- 
+{{--  
  <div class="container">
    <div class="row" style="margin-top:45px">
       <div class="col-md-4 col-md-offset-4">
@@ -106,6 +163,6 @@
     </form>
    </div>
 </div>
-</div>
+</div> --}}
 
 @endsection

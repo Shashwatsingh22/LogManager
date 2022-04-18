@@ -39,7 +39,7 @@
 
                 <div class="topLinks">
                     <a href="" class="link">Contact Us</a>
-                    <a href="" class="link">Sign In</a>
+                    <a href="/login" class="link">Sign In</a>
                     <a href="" class="link create">Create Your Account</a>
                 </div>
 
@@ -60,7 +60,7 @@
                 </div>
                 <div class="topLinksBottom">
                     <a href="" class="link">Contact Us</a>
-                    <a href="" class="link">Sign In</a>
+                    <a href="/login" class="link">Sign In</a>
                     <a href="" class="link create">Create Your Account</a>
                 </div>
             </div>
@@ -106,7 +106,7 @@
                 <p class="linkHead">Important Links</p>
                 <ul>
                     <li><a href="">Sign Up</a></li>
-                    <li><a href="">Login</a></li>
+                    <li><a href="/">Login</a></li>
                     <li><a href="">Dashboard</a></li>
                     <li><a href="">About</a></li>
                 </ul>
