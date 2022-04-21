@@ -5,12 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
+
+    {{-- Favicon --}}
     <link rel="shortcut icon" href="{{asset("images/extras/log.png")}}" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    {{-- Gsap3 Animation --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/gsap.min.js"></script>
+    
+    {{-- Our CSS --}}
     <link rel="stylesheet" href="{{asset("css/homePage.css")}}">
     <link rel="stylesheet" href="{{asset("css/logScreen.css")}}">
 
+    {{-- Font Awesome Icons --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
@@ -19,7 +26,6 @@
     rel="stylesheet"
     href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
     />
-
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
 </head>
@@ -116,7 +122,7 @@
 
             <div class="linkArea">
                 <p class="linkHead">Follow</p>
-                <ul style="align-items:center;">
+                <ul  class="social">
                     <li><a href=""><i class='fa fa-instagram'></i></a></li>
                     <li><a href=""><i class='fa fa-facebook'></i></a></li>
                     <li><a href=""><i class='fa fa-github'></i></a></li>

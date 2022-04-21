@@ -42,7 +42,7 @@
       <td>{{ $LoggedDevData['serverip']??"" }}</td>
                         <td>{{ $LoggedDevData['repolink']??"" }}</td>
                         <td>
-                        <a href=" {{ route('logout') }} "><button type="submit" class="btn btn-block btn-primary">View Project</button></a>
+                        <a href=" {{ route('admin.dev.signup') }} "><button type="submit" class="btn btn-block btn-primary">View Project</button></a>
                         <br>
                         <a href=" {{ route('dev.log.dashboard') }} "><button type="submit" class="btn btn-block btn-primary">Log View</button></a>
                         </td>

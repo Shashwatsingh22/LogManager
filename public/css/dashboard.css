@@ -1,0 +1,409 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+:root{
+    --themeColor:#232f3e;
+    --nav-color:rgb(248, 165, 48);
+}
+
+*{
+    padding:0px;
+    margin:0px;
+}
+.admin-container{
+    width:100%;
+    height:100vh;
+
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content:space-between;
+    position: relative;
+}
+.left-nav{
+    width:70px;
+    height:100vh;
+    position:fixed;
+    left:0px;
+    transition:1s ease;
+    background-color:var(--themeColor);
+
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+
+}
+.logoContainer{
+    width:100%;
+    height:auto;
+
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content:center;
+}
+.logoContainer p{
+    font-weight: bolder;
+    color: #fff;
+    padding-top: 3px;
+}
+.logoContainer small{
+    font-size: 5px;
+    color: white;
+    padding-left: 11px;
+}
+.mylogo{
+    width:25px;
+    margin-top: 10px;
+    height:25px;
+    border-radius: 5px;
+    background-color: var(--nav-color);
+    transform:rotate(60deg);
+}
+
+
+.linksNav{
+    width:100%;
+    height:auto;
+    align-self: center;
+    margin-top:50px;
+
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content:center;
+
+    /* border: 1px solid orange; */
+    overflow-y:scroll;
+
+}
+.linksNav::-webkit-scrollbar
+{
+    visibility:hidden;
+}
+.linksNav a i{
+    color:var(--nav-color);
+    font-size: 25px;
+}
+
+.linksNav a{
+    margin-top: 15px;
+    opacity:0.6;
+    text-decoration: none;
+    padding-left: 7px;
+
+}
+.linksNav a:hover{
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.content-box{
+    width:100%;
+    margin-left: 70px;
+    height:100%;
+    /* background-color: red; */
+
+    background-color:rgba(35, 47, 62, 0.76);
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content:flex-start;
+
+
+}
+.statusBar{
+    width:100%;
+    height:300px;
+    /* background-color:pink; */
+
+
+    display: flex;
+    align-items: flex-start;
+}
+
+.chartArea{
+    width:40%;
+    margin:10px 10px 0px 10px;
+
+    height:80%;
+    border-radius:10px;
+    background-color: var(--themeColor);
+
+}
+.userArea{
+    width:350px;
+    margin:10px 10px 0px 10px;
+
+    background-color:white;
+    height:auto;
+    border-radius:10px;
+    background-color: var(--themeColor);
+    color:white;
+    padding:10px;
+
+}
+.userItem{
+    padding:5px;
+    width: 100%;
+    height:auto;
+    display: flex;
+    justify-content: space-between;
+}
+.logBtns{
+    width:100%;
+    height:auto;
+    display: flex;
+    justify-content:flex-start;
+    align-items:center;
+}
+.logBtns a{
+    background-color:var(--nav-color);
+    text-decoration: none;
+    padding:8px;
+    border-radius:3px;
+    opacity: 0.7;
+    margin-right: 10px;
+}
+.green{
+    background-color:green !important;
+
+}
+
+.logBtns a:hover{
+    opacity: 1;
+}
+.yel{
+    color: var(--nav-color);
+}
+
+.userItem span {
+    width:50%;
+}
+.userArea .demo{
+    font-size: 20px;
+}
+#user{
+    color:var(--nav-color);
+    
+}
+#myChart{
+    width:100% !important;
+    height:100% !important;
+    color: white !important;
+}
+
+
+
+
+
+
+
+/* Content Yield */
+.addDelBtns{
+    width:100%;
+    height:auto;
+    padding: 10px;
+}
+.addDelBtns button{
+    background-color:var(--nav-color);
+    border-radius: 5px;
+    color: white;
+    opacity: 0.7;
+    outline:none;
+    border:none;
+    padding:10px;
+    cursor: pointer;
+
+}
+.addDelBtns button:hover{
+    opacity: 1;
+}
+.usersTable{
+    width:100%;
+    height:auto;
+    align-items: center;
+    justify-content:center;
+    display: flex;
+
+    border-radius: 8px;
+    overflow:hidden;
+
+
+}
+.usersTable table{
+    width:98%;
+    text-align: center;
+    color: white;
+    border-collapse: collapse;
+    background-color: var(--themeColor);
+
+}
+.usersTable table thead{
+    color: var(--nav-color);
+
+}
+
+.usersTable table tbody td {
+    border: 0px solid rgba(26, 32, 41, 0.548);
+}
+
+
+ .usersTable table thead tr th {
+    /* border: 1px solid orange; */
+    background-color: #151d25b7 !important;
+    color: white !important;
+    padding:7px;
+    
+  }
+.usersTable table tbody tr:nth-child(even)
+{   border:none;
+    
+    background-color: rgba(26, 32, 41, 0.548) !important;
+}
+
+
+
+
+
+
+
+
+/* Modal */
+.modalContent{
+    width: 100%;
+    height:100vh;
+    background-color:rgba(43, 43, 43, 0.651);
+    left:0px;
+    z-index: 22;
+    position: absolute;
+
+    display:none;
+    flex-direction:column;
+    align-items: center;
+    justify-content:center;
+
+}
+
+.modalArea{
+  width:450px;
+  height:auto;
+  border-radius: 5px;
+  background-color: var(--themeColor);
+  box-shadow: 3px 0px 20px 0px #4e4e4e;
+  overflow:hidden;
+
+  display: flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  align-items:flex-start;
+
+}
+.modalButtons{
+    width:100%;
+    height:30px;
+    background-color:var(--themeColor);
+ 
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content:flex-start;
+  
+    border-bottom: 0.1px solid rgb(21, 28, 37);
+
+}
+#pathName{
+    color:white;
+    font-size: 10px;
+    padding-left: 10px;
+}
+.modalButtons .close{
+    width:15px;
+    height:15px;
+    border-radius: 100%;
+    margin-left: 10px;
+
+    background-color:rgb(177, 67, 67);
+    color: white;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    outline:none;
+    border:none;
+}
+.close:hover{
+    background-color:rgb(187, 48, 48);
+}
+.modalButtons .close i{
+    font-size:10px;
+
+}
+.modalInfo{
+    width:100%;
+    height:auto;
+    
+    padding: 10px;
+
+    display: flex;
+    flex-direction:column;
+    align-items: flex-start;
+    justify-content:flex-start;
+
+}
+.modalInfo .slog{
+    color:white;
+    font-weight: bolder;
+}
+.modalInfo form{
+    width:100%;
+    height:auto;
+    display: flex;
+    flex-direction:column;
+    align-items: flex-start;
+    justify-content:flex-start;
+
+}
+.modalInfo form input{
+    width:100%;
+    height:30px;
+    outline:none;
+    border:none;
+    margin-top: 5px;
+    padding-left: 3px;
+    border-radius:4px;
+
+}
+.slog2{
+    color:rgba(255, 255, 255, 0.822);
+}
+.dlBtn{
+    background-color:orange;
+    color:white;
+    border:none;
+    outline:none;
+    height:30px;
+    border-radius:4px;
+}
+.edit{
+    width:auto;
+    height:auto;
+    background-color:transparent;
+    cursor: pointer;
+    outline:none;
+    color: var(--nav-color);
+    border:none;
+}
