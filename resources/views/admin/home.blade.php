@@ -33,30 +33,31 @@
 
             {{-- Edit Record --}}
             <div class="modalInfo modalInfo2">
-                <p class="slog">Delete Your Developer</p>
-                @if($devloper??"")
-                <form action="{{ route('admin.dev.edit', ['dev_id' => $devloper->dev_id]) }}" method="post">
+                <p class="slog">Edit Your Developer</p>
+            
+                {{-- {{ route('admin.dev.edit', ['dev_id' => $devloper?->dev_id]) }} --}}
+                <form action="" method="post" >
                     @csrf    
                     {{-- Server Ip --}}
-                    <input type="text" class="form-control" name="serverip" placeholder="Enter New ServerIP" value="{{ old('jobid') }}">
+                    <input type="text" class="form-control" name="serverip" placeholder="Enter New ServerIP" value="">
                     
                     {{-- Email --}}
-                    <input type="text" class="form-control" name="email" placeholder="Enter New Email" value="{{ old('email') }}">
+                    <input type="text" class="form-control" name="email" placeholder="Enter New Email" value="">
                     
 
                     {{-- Access Log Key --}}
-                    <input type="text" class="form-control" name="logaccesskey" placeholder="Enter New LogAccessKey" value="{{ old('logaccesskey') }}">
+                    <input type="text" class="form-control" name="logaccesskey" placeholder="Enter New LogAccessKey" value="">
        
                     {{-- Project name --}}
-                    <input type="text" class="form-control" name="projectname" placeholder="Enter New ProjectName" value="{{ old('projectname') }}">
+                    <input type="text" class="form-control" name="projectname" placeholder="Enter New ProjectName" value="">
 
                     
                     {{-- Repo link --}}
-                    <input type="text" class="form-control" name="repolink" placeholder="Enter New repolink" value="{{ old('repolink') }}">
+                    <input type="text" class="form-control" name="repolink" placeholder="Enter New repolink" value="">
                    
                     <input class="dlBtn" type="submit"  value="Update">
                 </form>
-                @endif
+              
             </div>
 
 
@@ -64,8 +65,9 @@
         </div>
     </div>
 
-
+    <p class="headBef">Customize your <strong style="color:#f8a530;text-transform:uppercase;"> Developers</strong> below</p>
     <div class="addDelBtns">
+        <a class="green" href={{ route('admin.dev.signup') }}>Add Developer</a>
         <button onclick="delDeveloper()">Delete Devloper</button>
     </div>
 
@@ -88,14 +90,25 @@
         
 
                 @foreach($devlopers  as $devloper)
-                <tr>
-                    <td>{{ $devloper -> name }} </td>
+                <tr >
+                    <td>{{ $devloper ->name }} </td>
                     <td> {{ $devloper->email }} </td>
                     <td> {{ $devloper->username }}</td>
                     <td> {{ $devloper->projectname }} </td>
                     <td> {{ $devloper->serverip }} </td>
                     <td>
-                        <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                        <button class="editBtn"  onclick="editRecord(event)">
+                           
+                        <i 
+                            id={{$devloper->dev_id}} 
+                            name={{$devloper->name}}  
+                            email={{$devloper->email}} 
+                            repolink={{$devloper->repolink}}
+                            logaccesskey={{$devloper->logaccesskey}}
+                            username={{$devloper->username}} 
+                            projectname={{$devloper->projectname}} 
+                            serverip={{$devloper->serverip}} 
+                            class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></button>
                         <a href="{{ route('admin.dev.delete' , ['dev_id' => $devloper->dev_id]) }}" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                     </td>
                 </tr>

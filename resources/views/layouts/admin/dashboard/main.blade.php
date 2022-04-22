@@ -70,7 +70,7 @@
 
 
     {{-- Content Box --}}
-    <div class="content-box">
+    <div class="content-box" >
 
 
       <div class="statusBar">
@@ -96,9 +96,6 @@
 
           <div class="logBtns">
             <a href={{ route('logout') }}>Logout</a>
-            <a class="green" href={{ route('admin.dev.signup') }}>Add Dev</a>
-
-            <a class="green" href={{ route('admin.dashboard') }}>Dashboard</a>
           </div>
    
 

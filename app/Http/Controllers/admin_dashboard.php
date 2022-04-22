@@ -50,14 +50,14 @@ class admin_dashboard extends Controller
    }
 
    public function editDevProfile($dev_id,Request $req)
-   {
+   {  
      $dev = Dev :: where('dev_id','=',$dev_id);
      
      if(is_null($dev))
      {
        //Not Found the Dev Profile
        return redirect('/admin/dashboard');
-           }
+     }
      else
      {
          $dev->serverip = $req['serverip'];
@@ -66,6 +66,7 @@ class admin_dashboard extends Controller
          $dev->projectname= $req['projectname'];
          $dev->repolink= $req['repolink'];
          $dev->save();
+
      }
 
      return redirect('/admin/dashboard');

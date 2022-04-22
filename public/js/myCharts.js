@@ -21,6 +21,13 @@ const labels = [
     type: 'line',
     data: data,
     options: {
+
+      indexAxis: 'y',
+      scales: {
+        x: {
+          beginAtZero: true
+        }
+      }
     }
   };
   const ctx=document.getElementById('myChart');

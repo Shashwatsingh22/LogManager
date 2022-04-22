@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 :root{
     --themeColor:#232f3e;
-    --nav-color:rgb(248, 165, 48);
+    --nav-color:#f8a530;
 }
 
 *{
@@ -111,14 +111,13 @@
 
 
 
-
 .content-box{
     width:100%;
     margin-left: 70px;
     height:100%;
     /* background-color: red; */
 
-    background-color:rgba(35, 47, 62, 0.76);
+    background-color:rgba(35, 47, 62, 0.842);
     display: flex;
     flex-direction:column;
     align-items: center;
@@ -172,9 +171,10 @@
     align-items:center;
 }
 .logBtns a{
-    background-color:var(--nav-color);
+    background-color:rgba(255, 0, 0, 0.637);
     text-decoration: none;
-    padding:8px;
+    padding:2px 7px 2px 7px;
+
     border-radius:3px;
     opacity: 0.7;
     margin-right: 10px;
@@ -226,9 +226,20 @@
     opacity: 0.7;
     outline:none;
     border:none;
-    padding:10px;
+    padding:5px;
     cursor: pointer;
 
+}
+.addDelBtns a{
+    background-color:var(--nav-color);
+    border-radius: 5px;
+    color: white;
+    opacity: 0.7;
+    outline:none;
+    border:none;
+    padding:7px;
+    cursor: pointer;
+    text-decoration: none;
 }
 .addDelBtns button:hover{
     opacity: 1;
@@ -240,7 +251,6 @@
     justify-content:center;
     display: flex;
 
-    border-radius: 8px;
     overflow:hidden;
 
 
@@ -251,15 +261,19 @@
     color: white;
     border-collapse: collapse;
     background-color: var(--themeColor);
+    border-radius:5px;
+
 
 }
 .usersTable table thead{
     color: var(--nav-color);
 
+
 }
 
 .usersTable table tbody td {
     border: 0px solid rgba(26, 32, 41, 0.548);
+    text-transform: uppercase;
 }
 
 
@@ -377,12 +391,15 @@
     justify-content:flex-start;
 
 }
+.modalInfo2{
+    display:none;
+}
 .modalInfo form input{
     width:100%;
     height:30px;
     outline:none;
     border:none;
-    margin-top: 5px;
+    margin-top: 8px;
     padding-left: 3px;
     border-radius:4px;
 
@@ -406,4 +423,24 @@
     outline:none;
     color: var(--nav-color);
     border:none;
+}
+.editBtn{
+    background-color:transparent;
+    border:none;
+    outline:none;
+    cursor: pointer;
+    color: var(--nav-color);
+}
+
+
+
+.headBef{
+    align-self: flex-start;
+    padding-left: 10px;
+    font-size: 20px;
+    color:rgba(255, 255, 255, 0.849);
+    font-weight: bolder;
+}
+.delete i{
+    color:rgba(255, 0, 0, 0.637);
 }
