@@ -172,6 +172,27 @@
       
      <div class="form-group">
                  <label>ServerIP</label>
+                 <input type="text" class="form-control" name="serverip" placeholder="Enter New ServerIP" value="{{ old('jobid') }}">
+              </div>
+     
+              <div class="form-group">
+                 <label>Email</label>
+                 <input type="text" class="form-control" name="email" placeholder="Enter New Email" value="{{ old('email') }}">
+              </div>
+
+              <div class="form-group">
+                 <label>LogAccessKey</label>
+                 <input type="text" class="form-control" name="logaccesskey" placeholder="Enter New LogAccessKey" value="{{ old('logaccesskey') }}">
+              </div>
+
+              <div class="form-group">
+                 <label>ProjectName</label>
+                 <input type="text" class="form-control" name="projectname" placeholder="Enter New ProjectName" value="{{ old('projectname') }}">
+              </div>
+
+              <div class="form-group">
+                 <label>RepoLink</label>
+                 <input type="text" class="form-control" name="repolink" placeholder="Enter New repolink" value="{{ old('repolink') }}">
               </div>
      
     
