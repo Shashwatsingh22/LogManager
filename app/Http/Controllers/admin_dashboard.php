@@ -71,5 +71,23 @@ class admin_dashboard extends Controller
 
      return redirect('/admin/dashboard');
    }
+
+   public function serverNameInput()
+   {
+    $data = ['LoggedAdminData'=> Admin :: where('admin_id','=',session('LoggedAdmin'))->first()];
+    
+    return view("admin/serverInputName")->with($data);
+   }
+
+   public function serverConfig(Request $req)
+   {
+    $data = ['LoggedAdminData'=> Admin :: where('admin_id','=',session('LoggedAdmin'))->first()];
+    
+    $req->validate([
+      'servername' => 'required|alpha_dash'
+    ]);
+
+    return view("admin/serverConfigStatus")->with($data);
+   }
    
 }

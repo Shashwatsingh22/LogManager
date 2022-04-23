@@ -44,13 +44,19 @@
 
 
       <div class="linksNav">
-        <a href="">
+        <a href="{{ route('admin.dashboard') }}">
           <i class="fa fa-home"></i>
         </a>
+       
+        <a href="{{ route('admin.server.name') }}">
+        <i class="fa-solid fa-gears"></i>
+        </a>
+       
 
         <a href="">
           <i class="	fa fa-terminal"></i>
         </a>
+        
 
         <a href="">
           <i class="material-icons">	account_circle</i>
