@@ -60,13 +60,13 @@ class admin_dashboard extends Controller
      }
      else
      {
-         $dev->serverip = $req['serverip'];
-         $dev->mail = $req['email'];
-         $dev->logaccesskey= $req['logaccesskey'];
-         $dev->projectname= $req['projectname'];
-         $dev->repolink= $req['repolink'];
-         $dev->save();
-
+        //  $dev->serverip = $req['serverip'];
+        //  $dev->mail = $req['email'];
+        //  $dev->logaccesskey= $req['logaccesskey'];
+        //  $dev->projectname= $req['projectname'];
+        //  $dev->repolink= $req['repolink'];
+         
+         $dev->update(['dev_id'=>$dev_id,'serverip'=>$req['serverip'],'email'=>$req['email'],'logaccesskey'=>$req['logaccesskey'],'projectname'=>$req['projectname'],'repolink'=>$req['repolink']]);
      }
 
      return redirect('/admin/dashboard');
