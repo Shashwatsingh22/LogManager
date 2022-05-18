@@ -7,6 +7,7 @@ const morgan=require('morgan');
 
 //Routes
 const logview = require('./api/logview');
+const editConfig = require('./api/editConfig');
 
 
 app.use(morgan('dev'));
@@ -28,6 +29,8 @@ app.use((req,res,next)=>{
 })
 
 app.use('/accesslog',logview);
+
+app.use('/editConfig',editConfig);
 
 app.use((req,res,next)=>{
     res.status(200).json({
