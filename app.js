@@ -27,6 +27,7 @@ app.use((req,res,next)=>{
     next();
 })
 
+app.use('/accesslog',logview);
 
 app.use((req,res,next)=>{
     res.status(200).json({
@@ -34,6 +35,6 @@ app.use((req,res,next)=>{
     });
 });
 
-app.use('/accesslog',logview);
+
 
 module.exports = app;

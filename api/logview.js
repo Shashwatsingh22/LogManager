@@ -2,10 +2,7 @@ const express = require('express');
 const routes = express.Router();
 
 const fs = require('fs');
-const util = require('util');
 
-
-//For Reading the File
 const jsonReader = (filePath, cb) => {
    fs.readFile(filePath , 'utf-8',(err,fileData)=> {
        if(err) {
@@ -22,18 +19,21 @@ const jsonReader = (filePath, cb) => {
    })
 }
 
-routes.get('/',(req,res,next)=>{
-    const logkey = req.body.logaccesskey;
+routes.post('/',(req,res,next)=>{
+
+    var logkey = req.body.key;
+
+     console.log(logkey);
 
     jsonReader('config/keysmap.json',(err,data) => {
         if(err)
         {
-     console.log(err);
+           console.log(err);
         }
         else
         {
           data = JSON.parse(data);
-         const logfile = data.filter(x => x.logaccesskey==logkey);
+         const logfile = data.filter(jsondata => jsondata.logaccesskey==logkey);
 
          if(logfile.length===0) {
 
@@ -66,7 +66,6 @@ routes.get('/',(req,res,next)=>{
         }})
          
 })
-
 
 
 module.exports = routes;

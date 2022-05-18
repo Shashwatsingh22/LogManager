@@ -7,6 +7,6 @@
     {
         "logaccesskey" : "123key2",
         "projectname" : "CodeEater",
-        "log" : "/var/log/apache/error.log"
+        "log" : "logs/error.log"
     }
 ]
