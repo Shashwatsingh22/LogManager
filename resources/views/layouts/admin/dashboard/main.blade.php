@@ -52,11 +52,13 @@
         <i class="fa-solid fa-gears"></i>
         </a>
        
+        <a href="{{ route('admin.server.input.ip') }}">
+          <i class="fa fa-pencil"></i>
+        </a>
 
         <a href="">
-          <i class="	fa fa-terminal"></i>
+          <i class="fa fa-terminal"></i>
         </a>
-        
 
         <a href="">
           <i class="material-icons">	account_circle</i>

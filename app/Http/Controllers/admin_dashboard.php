@@ -72,6 +72,7 @@ class admin_dashboard extends Controller
      return redirect('/admin/dashboard');
    }
 
+//For Server Configuration
    public function serverNameInput()
    {
     $data = ['LoggedAdminData'=> Admin :: where('admin_id','=',session('LoggedAdmin'))->first()];
@@ -89,5 +90,28 @@ class admin_dashboard extends Controller
 
     return view("admin/serverConfigStatus")->with($data);
    }
-   
+
+   //For Updating the File of plugin 
+   public function serverIPinput()
+   {
+    $data = ['LoggedAdminData'=> Admin :: where('admin_id','=',session('LoggedAdmin'))->first()];    
+    return view("admin/serverInputIP")->with($data);
+   }
+
+   public function serverFileEditor()
+   {
+    $data = ['LoggedAdminData'=> Admin :: where('admin_id','=',session('LoggedAdmin'))->first()];
+    // $admin = Admin :: where('admin_id','=',session('LoggedAdmin'))->first();
+    $req->validate([
+      'servername' => 'required|ip'
+    ]);
+    
+    // $res = Http::post('http://'.$req->serverip.':3000/editConfig/read', [
+    //   'accessKey' => env('ADMIN_ACCESS_KEY')
+    //   ]);
+      
+    //$res=$res->collect();
+    
+    return view("admin/dashboard/fileEditor",['LoggedDevData'=> $dev, 'apicall'=> $res]);
+  }
 }

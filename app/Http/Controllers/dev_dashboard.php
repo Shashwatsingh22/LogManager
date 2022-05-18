@@ -40,7 +40,4 @@ class dev_dashboard extends Controller
        
        return view("dev/project_desc")->with($data);
    }
-
-   
-   
 }

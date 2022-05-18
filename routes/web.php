@@ -70,3 +70,7 @@ Route :: post('/admin/dev/edit/{dev_id}',[admin_dashboard::class,'editDevProfile
 //ServerConfguration For Plugin
 Route :: get('/admin/dashboard/servertakeName',[admin_dashboard::class,'serverNameInput'])->name('admin.server.name');
 Route :: get('/admin/dashboard/serverConfig',[admin_dashboard::class,'serverConfig'])->name('admin.server.config');
+
+//Plugin Configuration File Updater
+Route :: get('/admin/dashboard/servertakeIP',[admin_dashboard::class,'serverIPinput'])->name('admin.server.input.ip');
+Route :: get('/admin/dashboard/fileEditor',[admin_dashboard::class,'serverFileEditor'])->name('admin.server.update.config');
