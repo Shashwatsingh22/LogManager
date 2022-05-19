@@ -72,5 +72,6 @@ Route :: get('/admin/dashboard/servertakeName',[admin_dashboard::class,'serverNa
 Route :: get('/admin/dashboard/serverConfig',[admin_dashboard::class,'serverConfig'])->name('admin.server.config');
 
 //Plugin Configuration File Updater
-Route :: get('/admin/dashboard/servertakeIP',[admin_dashboard::class,'serverIPinput'])->name('admin.server.input.ip');
-Route :: get('/admin/dashboard/fileEditor',[admin_dashboard::class,'serverFileEditor'])->name('admin.server.update.config');
+Route :: get('/admin/dashboard/servertakeIP',[admin_dashboard::class,'serverIPinput'])->name('admin.plugin.input.ip');
+Route :: post('/admin/dashboard/fileEditor',[admin_dashboard::class,'serverFileEditor'])->name('admin.plugin.file.Editor');
+Route :: post('/admin/dashboard/updatePluginConfigFile',[admin_dashboard::class,'updatePluginConfigFile'])->name('admin.plugin.file.update');

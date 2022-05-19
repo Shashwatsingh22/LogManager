@@ -18,28 +18,23 @@
            <h4> Provide ServerIP 🖥 | Update KeysMap File</h4>
            <hr>
 
-           <!-- <form action="" method="get"> -->
-
+         <form action="{{ route('admin.plugin.file.Editor') }}" method="post">
+           
            @if(Session::get('fail'))
                <div class="alert alert-danger">
                   {{ Session::get('fail') }}
                </div>
             @endif
-
-<!-- Here whenever we send the POST request from this from then we need to secure
-     it by the help of CROSS-SITE FORGIRY-->
-
+            @csrf
     <div class="form-group">
-                 <label>IP</label>
-                 <input type="text" class="form-control" name="servername" placeholder="Enter Server IP" value="{{ old('servername') }}">
+                 <label>IP </label>
+                 <input type="text" class="form-control" name="serverip" placeholder="Enter Server IP" value="{{ old('serverip') }}">
                 <br>
-                 <span class="text-danger">@error('servername'){{ $message }} @enderror</span>
+                 <span class="text-danger">@error('serverip'){{ $message }} @enderror</span>
               </div>
 <br>
               <button type="submit" class="btn btn-block btn-primary">Enter</button>
               <br>
 
 </div>
-
-
 @endsection

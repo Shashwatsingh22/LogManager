@@ -52,7 +52,7 @@
         <i class="fa-solid fa-gears"></i>
         </a>
        
-        <a href="{{ route('admin.server.input.ip') }}">
+        <a href="{{ route('admin.plugin.input.ip') }}">
           <i class="fa fa-pencil"></i>
         </a>
 
