@@ -2,6 +2,7 @@ const express = require('express');
 const routes = express.Router();
 
 const fs = require('fs');
+const { updateNotification } = require('npm');
 
 const jsonReader = (filePath, cb) => {
    fs.readFile(filePath , 'utf-8',(err,fileData)=> {
@@ -45,7 +46,6 @@ const jsonUpdate = (filePath,data,cb) => {
 
 routes.post('/read',(req,res,next)=> {
     const accessKey = req.body.accessKey;
-    console.log(req);
     if(accessKey=="admin12345")
     {
         jsonReader('config/keysmap.json',(err,data)=>{
@@ -79,8 +79,8 @@ routes.post('/update',(req,res,next)=> {
     {
         let updata = req.body.newData;
         //updata = JSON.parse(updata);
-        updata =  JSON.stringify(updata,null,2);
-
+        updata =  JSON.parse(updata,null,2);
+        updata = JSON.stringify(updata);
         jsonUpdate('config/keysmap.json',updata,(err, data)=>{
             if(err) 
             {
