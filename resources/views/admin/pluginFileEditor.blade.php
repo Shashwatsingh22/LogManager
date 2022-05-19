@@ -30,30 +30,33 @@
      it by the help of CROSS-SITE FORGIRY-->
       <input type="hidden" name="serverip" value= {{ $serverip }}>
     <div class="form-group">
-    <textarea id="editor" name="newData" rows="30" cols="100">
-              
-            
-     </textarea>
+    <textarea id="editor" name="newData" rows="30" cols="100"></textarea>
            @if($data['succ']==1)
               
                 <script>
-                  //let Jsondata = JSON.parse(JSON.stringify(@json($data['data'])))
+                  let Jsondata = JSON.parse(JSON.stringify(@json($data['data'])))
 
-                  let Jsondata = JSON.stringify(@json($data['data']));
-                  // let b=`[`;
-                  // for(let a of Jsondata)
-                  // {
-                  //    b+=`
-                  //         {
-                  //           "logaccesskey" : "${a['logaccesskey']}",\n
-                  //           "projectname" : "${a['projectname']}",\n
-                  //           "log" : "${a['log']}"
-                  //         },
-                  //        `
+                   // let Jsondata = JSON.stringify(@json($data['data']));
+                  let dummy=`[`;
+                  let flag=0;
+                  let sizeOfData = Jsondata.length;
+                  console.log(sizeOfData);
+                  for(let data of Jsondata)
+                  {
+                      dummy+=`
+                          {
+                            "logaccesskey" : "${data['logaccesskey']}",\n
+                            "projectname" : "${data['projectname']}",\n
+                            "log" : "${data['log']}"
+                          }`
+                         flag++;
                      
-                  // }
-                  // b+=`]`;
-                  document.getElementById('editor').value = Jsondata;
+                         if(flag!=sizeOfData) dummy+=',';  
+                  }
+                  dummy+=`
+               ]`;
+                  
+                  document.getElementById('editor').value = dummy;
                   
                 </script>
 

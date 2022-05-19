@@ -120,15 +120,15 @@ class admin_dashboard extends Controller
   public function updatePluginConfigFile(Request $req)
   {
     $admin = Admin :: where('admin_id','=',session('LoggedAdmin'))->first();
-
+    // dd(json_encode($req->newData));
+    // $req->die;
     $res = Http::post('http://'.$req->serverip.':3000/editConfig/update', [
       'accessKey' => env('ADMIN_ACCESS_KEY'),
       'newData' => $req->newData
       ]);
       
     $res=$res->collect();
-     dd($res);
-    $req->die;
+    
     return view("admin/pluginFileEditor",['LoggedAdminData'=> $admin, 'data'=> $res , 'serverip' => $req->serverip]);
   }
 }
