@@ -43,10 +43,10 @@ const jsonUpdate = (filePath,data,cb) => {
     })
 }
 
-routes.get('/read',(req,res,next)=> {
+routes.post('/read',(req,res,next)=> {
     const accessKey = req.body.accessKey;
-
-    if(accessKey=="123")
+    console.log(req);
+    if(accessKey=="admin12345")
     {
         jsonReader('config/keysmap.json',(err,data)=>{
             if(err) console.log(err);
@@ -75,7 +75,7 @@ routes.get('/read',(req,res,next)=> {
 routes.post('/update',(req,res,next)=> {
     const accessKey = req.body.accessKey;
 
-    if(accessKey=="123")
+    if(accessKey=="admin12345")
     {
         let updata = req.body.newData;
         //updata = JSON.parse(updata);
