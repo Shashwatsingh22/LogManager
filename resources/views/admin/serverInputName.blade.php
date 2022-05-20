@@ -20,7 +20,7 @@
       </div>
       <div class="input-right">
          <p >Enter Server name Here</p>
-         <input type="text" name="servername" placeholder="Server be like- 127.0.0.1" value="{{ old('servername') }}">
+         <input type="text" name="servername" placeholder="Server be like- WebApp-123" value="{{ old('servername') }}">
          <button type="submit">Configure Server</button>
       </div>
    </form>
