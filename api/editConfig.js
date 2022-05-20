@@ -2,7 +2,6 @@ const express = require('express');
 const routes = express.Router();
 
 const fs = require('fs');
-const { updateNotification } = require('npm');
 
 const jsonReader = (filePath, cb) => {
    fs.readFile(filePath , 'utf-8',(err,fileData)=> {
