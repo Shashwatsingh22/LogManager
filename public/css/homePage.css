@@ -348,12 +348,13 @@
 
 }
 .linkArea{
-    width:max-content;
+    width:auto;
     height:100%;
     display:flex;
     flex-direction: column;
     align-items:flex-start;
     justify-content:center;
+    /* border:1px solid white; */
 }
 .linkArea .linkHead{
     text-transform: uppercase;
@@ -364,6 +365,8 @@
 .linkArea ul{
     width:100%;
     height:50%;
+    /* border:1px solid white; */
+
     display:flex;
     flex-direction: column;
     align-items:flex-start;
@@ -383,7 +386,9 @@
 
 
 
-
+.social{
+    align-items:center;
+}
 
 
 
@@ -394,7 +399,11 @@
     .leftSlide h1 {
         font-size:12px;
     }
-  
+    .social{
+        align-items:flex-start ;
+
+    }
+ 
 }
 
 @media screen and (max-width:463px){
@@ -403,6 +412,15 @@
     }
     .hamburger{
         display:block !important;
+    }
+    .linkArea{
+        flex-grow: 1;
+        margin-top: 20px;
+        width:100%;
+    }
+
+    .logTv{
+        display:none;
     }
 }
 @media screen and (max-width:564px){

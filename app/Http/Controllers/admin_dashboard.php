@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 //importing Model
 use App\Models\Admin;
@@ -50,25 +51,84 @@ class admin_dashboard extends Controller
    }
 
    public function editDevProfile($dev_id,Request $req)
-   {
+   {  
      $dev = Dev :: where('dev_id','=',$dev_id);
      
      if(is_null($dev))
      {
        //Not Found the Dev Profile
        return redirect('/admin/dashboard');
-           }
+     }
      else
      {
-         $dev->serverip = $req['serverip'];
-         $dev->mail = $req['email'];
-         $dev->logaccesskey= $req['logaccesskey'];
-         $dev->projectname= $req['projectname'];
-         $dev->repolink= $req['repolink'];
-         $dev->save();
+        //  $dev->serverip = $req['serverip'];
+        //  $dev->mail = $req['email'];
+        //  $dev->logaccesskey= $req['logaccesskey'];
+        //  $dev->projectname= $req['projectname'];
+        //  $dev->repolink= $req['repolink'];
+         
+         $dev->update(['dev_id'=>$dev_id,'serverip'=>$req['serverip'],'email'=>$req['email'],'logaccesskey'=>$req['logaccesskey'],'projectname'=>$req['projectname'],'repolink'=>$req['repolink']]);
      }
 
      return redirect('/admin/dashboard');
    }
-   
+
+//For Server Configuration
+   public function serverNameInput()
+   {
+    $data = ['LoggedAdminData'=> Admin :: where('admin_id','=',session('LoggedAdmin'))->first()];
+    
+    return view("admin/serverInputName")->with($data);
+   }
+
+   public function serverConfig(Request $req)
+   {
+    $data = ['LoggedAdminData'=> Admin :: where('admin_id','=',session('LoggedAdmin'))->first()];
+    
+    $req->validate([
+      'servername' => 'required|alpha_dash'
+    ]);
+
+    return view("admin/serverConfigStatus")->with($data);
+   }
+
+   //For Updating the File of plugin 
+   public function serverIPinput()
+   {
+    $data = ['LoggedAdminData'=> Admin :: where('admin_id','=',session('LoggedAdmin'))->first()];    
+    return view("admin/serverInputIP")->with($data);
+   }
+
+   public function serverFileEditor(Request $req)
+   {
+    $admin = Admin :: where('admin_id','=',session('LoggedAdmin'))->first();
+
+    $req->validate([
+      'serverip' => 'required|ip'
+    ]);
+    
+    $res = Http::post('http://'.$req->serverip.':3000/editConfig/read', [
+      'accessKey' => env('ADMIN_ACCESS_KEY')
+      ]);
+      
+    $res=$res->collect();
+    //  dd($res);
+    // $req->die;
+    return view("admin/pluginFileEditor",['LoggedAdminData'=> $admin, 'data'=> $res , 'serverip' => $req->serverip]);
+  }
+
+  public function updatePluginConfigFile(Request $req)
+  {
+    $admin = Admin :: where('admin_id','=',session('LoggedAdmin'))->first();
+    // dd(json_encode($req->newData));
+    // $req->die;
+    $res = Http::post('http://'.$req->serverip.':3000/editConfig/update', [
+      'accessKey' => env('ADMIN_ACCESS_KEY'),
+      'newData' => $req->newData
+      ]);
+      
+    $res=$res->collect();
+    
+    return view("admin/pluginFileEditor",['LoggedAdminData'=> $admin, 'data'=> $res , 'serverip' => $req->serverip]);
+  }
 }

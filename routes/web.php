@@ -66,3 +66,12 @@ Route :: post('/admin/dev/delete/',[admin_dashboard::class,'deleteDevByUsername'
 
 //Edit Dev Profile
 Route :: post('/admin/dev/edit/{dev_id}',[admin_dashboard::class,'editDevProfile'])->name('admin.dev.edit');
+
+//ServerConfguration For Plugin
+Route :: get('/admin/dashboard/servertakeName',[admin_dashboard::class,'serverNameInput'])->name('admin.server.name');
+Route :: get('/admin/dashboard/serverConfig',[admin_dashboard::class,'serverConfig'])->name('admin.server.config');
+
+//Plugin Configuration File Updater
+Route :: get('/admin/dashboard/servertakeIP',[admin_dashboard::class,'serverIPinput'])->name('admin.plugin.input.ip');
+Route :: post('/admin/dashboard/fileEditor',[admin_dashboard::class,'serverFileEditor'])->name('admin.plugin.file.Editor');
+Route :: post('/admin/dashboard/updatePluginConfigFile',[admin_dashboard::class,'updatePluginConfigFile'])->name('admin.plugin.file.update');
