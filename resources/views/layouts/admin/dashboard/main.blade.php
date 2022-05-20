@@ -6,6 +6,18 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>@yield('title')</title>
 
+  {{-- For Toast --}}
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+  
+  {{-- Code Mirror For Code Editor Displaying --}}
+  <script language="javascript" type="text/javascript"  src="https://codemirror.net/lib/codemirror.js"></script>
+  <script language="javascript" type="text/javascript"  src="https://codemirror.net/mode/perl/perl.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://codemirror.net/lib/codemirror.css"></link>
+  <link rel="stylesheet" type="text/css" href="https://codemirror.net/theme/lucario.css"></link>
+  
+
 
   {{-- Favicon --}}
   <link rel="shortcut icon" href="{{asset("images/extras/log.png")}}" type="image/x-icon">
@@ -49,7 +61,7 @@
         </a>
        
         <a href="{{ route('admin.server.name') }}">
-        <i class="fa-solid fa-gears"></i>
+        <i class="fa solid fa-gears"></i>
         </a>
        
         <a href="{{ route('admin.plugin.input.ip') }}">
@@ -83,7 +95,7 @@
 
       <div class="statusBar">
         <div class="chartArea">
-          <canvas id="myChart"></canvas>
+          <canvas id="myChart" ></canvas>
         </div>
         <div class="userArea">
           <p class="demo">Welcome,<span id="user">@yield('name')</span></p>

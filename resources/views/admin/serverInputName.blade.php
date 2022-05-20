@@ -12,6 +12,32 @@
 
 @section('content') 
 
+
+<div class="input-ip-area">
+   <form action="{{ route('admin.server.config') }}" method="get" class="input-main">
+      <div class="input-left">
+         <i class="	fa fa-server"></i>
+      </div>
+      <div class="input-right">
+         <p >Enter Server name Here</p>
+         <input type="text" name="servername" placeholder="Server be like- 127.0.0.1" value="{{ old('servername') }}">
+         <button type="submit">Configure Server</button>
+      </div>
+   </form>
+   <small>@error('servername'){{ $message }} @enderror</small><br>
+   @if(Session::get('fail'))
+   <small>
+      {{ Session::get('fail') }}
+   </small>
+   @endif
+</div>
+
+@endsection
+
+
+
+{{-- Old work --}}
+{{-- 
 <div class="container">
    <div class="row">
       <div class="col-md-4 col-md-offset-4">
@@ -39,7 +65,4 @@
               <button type="submit" class="btn btn-block btn-primary">Configure</button>
               <br>
 
-</div>
-
-
-@endsection
+</div> --}}
