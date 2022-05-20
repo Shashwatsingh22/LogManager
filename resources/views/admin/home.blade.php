@@ -40,11 +40,11 @@
                     @csrf    
                     {{-- Server Ip --}}
                     <p> Server IP </p>
-                    <input type="text" class="form-control" name="serverip" placeholder="Enter New ServerIP" value="">
+                    <input type="text" class="form-control" name="serverip" placeholder="Enter New ServerIP" value=" ">
                     
                     {{-- Email --}}
                     <p> Email </p>
-                    <input type="text" class="form-control" name="email" placeholder="Enter New Email" value="">
+                    <input type="email" class="form-control" name="email" placeholder="Enter New Email" value="">
                     
 
                     {{-- Access Log Key --}}
