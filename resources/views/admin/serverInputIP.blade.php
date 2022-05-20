@@ -23,7 +23,7 @@
       </div>
       <div class="input-right">
          <p >Enter your IP Address Here</p>
-         <input type="text" name="serverip" placeholder="IP be like- 127.0.0.1" value="{{ old('servername') }}">
+         <input type="text" name="serverip" placeholder="IP be like- 103.43.2.45" value="{{ old('servername') }}">
          <button type="submit">Get Into It</button>
       </div>
    </form>
@@ -37,35 +37,3 @@
 @endsection
 
 
-
-
-{{-- Old Work--}}
-{{-- <div class="">
-</div>
-
-
-<div class="container">
-   <div class="row">
-      <div class="col-md-4 col-md-offset-4">
-           <h4> Provide ServerIP 🖥 | Update KeysMap File</h4>
-           <hr>
-
-         <form action="{{ route('admin.plugin.file.Editor') }}" method="post">
-           
-           @if(Session::get('fail'))
-               <div class="alert alert-danger">
-                  {{ Session::get('fail') }}
-               </div>
-            @endif
-            @csrf
-    <div class="form-group">
-                 <label>IP </label>
-                 <input type="text" class="form-control" name="serverip" placeholder="Enter Server IP" value="{{ old('serverip') }}">
-                <br>
-                 <span class="text-danger">@error('serverip'){{ $message }} @enderror</span>
-              </div>
-<br>
-              <button type="submit" class="btn btn-block btn-primary">Enter</button>
-              <br>
-
-</div> --}}
