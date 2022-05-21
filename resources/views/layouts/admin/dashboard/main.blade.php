@@ -98,7 +98,9 @@
           <canvas id="myChart" ></canvas>
         </div>
         <div class="userArea">
-          <p class="demo">Welcome,<span id="user">@yield('name')</span></p>
+          <div class="topNotch">
+            <p class="demo">Welcome,<span id="user">@yield('name')</span></p>
+          </div>
           <div class="userItem">
             <span class="yel"><small>Email</small></span>
             <span><small>@yield('email')</small></span>

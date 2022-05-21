@@ -125,13 +125,33 @@
     height:auto;
     margin-top: 10px;
     font-size:20px;
+    margin-left: 1px;
     /* border:1px solid white; */
 
     display:flex;
     justify-content:space-between;
     align-items: center;
 }
+.choices .item label{
+    cursor: pointer;
+}
+.choices .item input::before{
+    width:13px;
+    height:13px;
+    border:2px solid white;
+    content:"";
+    border-radius: 100%;
+    background-color: white;
 
+    display: block;
+    transform: translate(-1px,-1px);
+}
+
+.choices .item input[type="radio"]:checked::before{
+    background-color: orange;
+    border:2px solid orange;
+
+}
 .rightLog{
     width:40%;
     height:100%;
@@ -142,6 +162,8 @@
     opacity:0.8;
     transition:1s ease;
 }
+
+
 .rightLog:hover{
     opacity: 1;
     transition:1s ease;
