@@ -24,6 +24,7 @@
                 - nodejs
                 - git
                 - curl
+                - npm
 
         - name : "Download Plugin from github"
           shell : git clone -b plugin https://github.com/Shashwatsingh22/LogManager
@@ -33,4 +34,8 @@
                 cd /home/ubuntu/LogManager
                 npm install
 
-        - name : ""
+        - name : "Starting the API"
+          async : 10
+          poll : 0
+          shell : 
+            "(npm start &)"
