@@ -21,9 +21,7 @@ const jsonReader = (filePath, cb) => {
 
 routes.post('/',(req,res,next)=>{
 
-    var logkey = req.body.key;
-
-     console.log(logkey);
+    let logkey = req.body.logkey;
 
     jsonReader('config/keysmap.json',(err,data) => {
         if(err)
