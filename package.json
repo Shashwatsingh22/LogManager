@@ -1,0 +1,26 @@
+{
+  "name": "controller",
+  "version": "1.0.0",
+  "description": "This API Helps us to trigger the playbooks with given information.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Hello World\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shashwatsingh22/LogManager.git"
+  },
+  "keywords": [
+    "DevOps",
+    "Ansible"
+  ],
+  "author": "Shashwat Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shashwatsingh22/LogManager/issues"
+  },
+  "homepage": "https://github.com/Shashwatsingh22/LogManager#readme",
+  "dependencies": {
+    "morgan": "^1.10.0"
+  }
+}

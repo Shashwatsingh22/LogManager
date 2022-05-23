@@ -1,0 +1,9 @@
+---
+# vars file for pluginConfigure
+item :
+  - nodejs
+  - git
+  - curl
+  - npm
+
+repo_link : "https://github.com/Shashwatsingh22/LogManager"
