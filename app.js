@@ -6,16 +6,14 @@ const bodyParser =require('body-parser');
 const morgan=require('morgan');
 
 //Routes
-const logview = require('./api/logview');
-const editConfig = require('./api/editConfig');
-
+const config = require('./api/config');
 
 app.use(morgan('dev'));
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 //Resolving Cors Error 
-app.use((req,res,next)=>{
+app.get((req,res,next)=>{
     //Here, we set the Header Mannually
     res.header('Access-Control-Allow-Origin','*') //Here, We can specify the Specific endpoint
     res.header('Access-Control-Allow-Headers','Origin,X-Requested-With,Content-Type,Accept,Authorixation');
@@ -28,16 +26,26 @@ app.use((req,res,next)=>{
     next();
 })
 
-app.use('/accesslog',logview);
-
-app.use('/editConfig',editConfig);
-
-app.use((req,res,next)=>{
+app.get('/',(req,res,next)=>{
     res.status(200).json({
         message : "Server Started Working!"
+    })});
+
+app.get('/config',config);
+
+app.use((req, res, next) => {
+    const error = new Error('Not found');
+    error.status = 404;
+    next(error);
+})
+
+app.use((error, req, res, next) => {
+    res.status(error.status || 500);
+    res.json({
+        error: {
+            message: error.message
+        }
     });
 });
-
-
 
 module.exports = app;

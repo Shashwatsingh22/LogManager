@@ -4,7 +4,8 @@
   "description": "This API Helps us to trigger the playbooks with given information.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Hello World\""
+    "test": "echo \"Hello World\"",
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,8 @@
   "homepage": "https://github.com/Shashwatsingh22/LogManager#readme",
   "dependencies": {
     "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
   }
 }
