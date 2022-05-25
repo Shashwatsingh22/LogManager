@@ -1,6 +1,6 @@
 @extends('layouts.dev.dashboard.main')
 
-@section('title',"👩‍💻 Dev Dashboard")
+@section('title'," Dev Dashboard")
 
 @section('name',$LoggedDevData['name']??"")
 
@@ -11,53 +11,48 @@
 @section('disc',$LoggedDevData['discAboutDev']??"")
 
 @section('content') 
+    <div class="tasksContent">
+        <h4>Today's Tasks Distribution</h4>
+        <div class="tasksGrid">
 
-    <div class="container">
-        <div class="table-wrapper">
-            <div class="table-title">
-                <div class="row">
-                    <div class="col-sm-6">
-      <h2>Assigned <b> Projects</b></h2>
-     </div>
-                </div>
+            {{-- Project Item --}}
+            <script>
+                console.log(@json($LoggedDevData))
+            </script>
+            
+            <div class="task-grid-item">
+                <span class="ip">{{ $LoggedDevData['serverip']??"" }}</span>
+                <h6>{{ $LoggedDevData['projectname']??"" }}
+                    
+                    <small><small>via</small></small>
+                    <small style="color:white;">{{ $LoggedDevData['domain']??"" }}</small>
+
+                </h6>
+                <span class="repoLink">
+                    <input class="repo" id="repo" value="{{ $LoggedDevData['repolink']??"" }}"/>
+                    <i class="material-icons" style="cursor:pointer;" onclick="copyRepo()">content_copy</i>    
+                </span>
+
+                <span class="actions">
+                   <a href=" {{ route('admin.dev.signup') }} " style="background-color: rgba(255, 0, 0, 0.555);">View Project</a>
+                   <a href="{{ route('dev.log.dashboard') }}">View Log</a>
+                </span>
             </div>
-            <table class="table table-striped table-hover">
-                <thead>
-                    <tr>
-      
-                        <th>Project Name</th>
-                        <th>Domain</th>
-                        <th>Server IP</th>
-                        <th>Repo Link</th>
-                        <th>Actions</th>
-                   
-                    </tr>
-                
-                </thead>
-                <tbody>
-                    <tr>
-      
-                        <td>{{ $LoggedDevData['projectname']??"" }}</td>
-                        <td>{{ $LoggedDevData['domain']??"" }}</td>
-                        <td>{{ $LoggedDevData['serverip']??"" }}</td>
-                        <td>{{ $LoggedDevData['repolink']??"" }}</td>
-                        <td>
-                        <a href=" {{ route('admin.dev.signup') }} "><button type="submit" class="btn btn-block btn-primary">View Project</button></a>
-                        <br>
-                        <a href=" {{ route('dev.log.dashboard') }} "><button type="submit" class="btn btn-block btn-primary">Log View</button></a>
-                        </td>
-                    </tr>
-
-                </tbody>
-            </table>
-   
+            {{-- Ends of Project Item --}}
         </div>
-    </div>
- 
-    </form>
-   </div>
-  </div>
- </div>
 
-</div>
+
+    </div>
+
+    <script>
+        const copyRepo=()=>{
+            let rep=document.getElementById('repo');
+            rep.select();
+            rep.setSelectionRange(0,99999);
+            navigator.clipboard.writeText(rep.value);
+
+
+            
+        }
+    </script>
 @endsection

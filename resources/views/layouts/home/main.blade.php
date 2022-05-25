@@ -45,7 +45,12 @@
 
                 <div class="topLinks">
                     <a href="" class="link">Contact Us</a>
-                    <a href="{{ route('login') }}" class="link">Sign In</a>
+                    @if(Session::get('LoggedAdmin'))
+                        <a href={{ route('logout') }} class="link create" style="background-color:rgba(255, 0, 0, 0.616);">Logout</a>
+                        <a href="{{ route('admin.dashboard') }}" class="link create"  style="background-color:rgba(30, 255, 0, 0.616);">Go to Dashboard</a>
+                    @else
+                        <a href="{{ route('login') }}" class="link">Sign In</a>
+                    @endif
                     <a href="" class="link create">Create Your Account</a>
                 </div>
 

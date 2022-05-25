@@ -24,7 +24,14 @@
          <button type="submit">Configure Server</button>
       </div>
    </form>
-   <small>@error('servername'){{ $message }} @enderror</small><br>
+   <small>
+      @error('servername')
+      {{ $message }}
+      @enderror
+   </small>
+   <br>
+
+
    @if(Session::get('fail'))
    <small>
       {{ Session::get('fail') }}
