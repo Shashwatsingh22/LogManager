@@ -1,0 +1,8 @@
+rule_list:
+  - proto: tcp
+    from_port: 3000
+    to_port: 3000
+    cidr_ip: 10.0.1.0/24
+ec2_vpc_id: vpc-12345
+ec2_security_group_name: launch-wizard-54
+ec2_group_region: ap-south-1

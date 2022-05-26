@@ -31,7 +31,7 @@ app.get('/',(req,res,next)=>{
         message : "Server Started Working!"
     })});
 
-app.get('/config',config);
+app.use('/config',config);
 
 app.use((req, res, next) => {
     const error = new Error('Not found');
