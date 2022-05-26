@@ -65,6 +65,5 @@ window.onclick=function(e){
     if(e.target.getAttribute('class')=="modalContent"){
         gsap.from(".modalArea", {duration: 0.5,y:-100,width:0,height:0, opacity:0.1});
         modalContent.style.display="none";
-       
     }
 }

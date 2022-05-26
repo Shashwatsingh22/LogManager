@@ -31,7 +31,9 @@ class dev_dashboard extends Controller
       $res=$res->collect();
       
        //return view("dev/log_dashboard")->with(['LoggedDevData' => $dev,'apicall' => $res]);
-       return view("dev/log_dashboard",['LoggedDevData'=> $dev, 'apicall'=> $res]);
+      //  return view("dev/log_dashboard",['LoggedDevData'=> $dev, 'apicall'=> $res]);
+
+      return ['LoggedDevData'=> $dev, 'apicall'=> $res];
     }
 
    public function project_desc()
