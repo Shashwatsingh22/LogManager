@@ -16,6 +16,8 @@
 
 
 
+
+
 </head>
 <body>
 
@@ -43,7 +45,7 @@
 
 
         <div class="userDetails">
-
+          <a href={{ route('logout') }} class="link create" style="background-color:rgba(255, 0, 0, 0.616);">Logout</a>
           <i class="material-icons">settings</i>
           <i class="material-icons">notifications</i>
           <i class="material-icons vert">more_vert</i>
@@ -124,6 +126,12 @@
 
     </div>
 
+
+
+
+
+    {{-- Our JS --}}
+    <script src="{{asset("js/dev.js")}}"></script>
 
 </body>
 </html>
